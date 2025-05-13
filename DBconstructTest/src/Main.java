@@ -15,14 +15,20 @@ public class Main {
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
             System.out.println("데이터베이스 연결 성공!");
             
-            // 로그인시 확인해서 받아오는 값으로 추후 변경
+            /* // 로그인시 확인해서 받아오는 값으로 추후 변경
             String currentUserID = "2222222";
 
             // JoinUser의 회원가입 실행
             JoinUser.join(conn);
 
             // CreateRecruitmentPost의 모집글 작성 실행
-            CreateRecruitmentPost.post(conn, currentUserID);
+            CreateRecruitmentPost.post(conn, currentUserID); */
+            
+            /* Runner로 가동 
+             * Runner runner = new Runner();
+             * Runner.run();
+             */
+            
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
