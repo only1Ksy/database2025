@@ -21,6 +21,8 @@ public class Main {
             // JoinUser의 회원가입 실행
             JoinUser.join(conn);
 
+            // CreateRecruitmentPost의 모집글 작성 실행
+            CreateRecruitmentPost.post(conn, currentUserID);
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
