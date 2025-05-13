@@ -8,6 +8,7 @@ public class JoinUser {
 
         try {
             // 회원가입 쿼리
+            // 학번, 비밀번호, 닉네임, 이메일, 전화번호를 DB에 넣는 쿼리 설정. 평점은 디폴트값(0.00)으로 자동 설정
             String insertSQL = "INSERT INTO Users (user_id, pwd, nickname, email, phone) VALUES (?, ?, ?, ?, ?)";
             pstmt = conn.prepareStatement(insertSQL);
 
