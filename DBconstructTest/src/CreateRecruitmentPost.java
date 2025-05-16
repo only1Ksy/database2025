@@ -29,6 +29,8 @@ public class CreateRecruitmentPost {
 
             System.out.print("사례금 (숫자만 입력): ");
             int salary = Integer.parseInt(scanner.nextLine());
+            
+            System.out.print("모집 상태는 자동으로 모집 중으로 설정됩니다.");
 
             // 입력값 세팅
             pstmt.setInt(1, id);

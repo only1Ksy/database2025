@@ -17,7 +17,7 @@ CREATE TABLE DB2025_Recruitment(
     # rating을 자주 보여줘야 하는 경우 여기서 view 사용 가능
     recruitment_status VARCHAR(10) DEFAULT '모집중'
     	CHECK (recruitment_status IN ('모집중', '모집마감', '근무완료')),
-    created_at TIMESTAMP NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (user_id) REFERENCES Users(user_id) ON DELETE CASCADE
 );
 
