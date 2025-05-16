@@ -3,7 +3,7 @@ Show databases;
 Use EJobDam;
 
 # 학번, 비밀번호, 닉네임, 이메일, 전화번호, 평점(0.00~5.00의 값을 가지고, 초기값은 0.00)
-CREATE TABLE Users(
+CREATE TABLE DB2025_Users(
 	user_id VARCHAR(7) PRIMARY KEY,
     pwd VARCHAR(20) NOT NULL,
     nickname VARCHAR(20) NOT NULL,
