@@ -21,14 +21,14 @@ CREATE TABLE DB2025_Recruitment(
     FOREIGN KEY (user_id) REFERENCES Users(user_id) ON DELETE CASCADE
 );
 
-Describe Recruitment;
+Describe DB2025_Recruitment;
 
-INSERT INTO Recruitment (id, user_id, work_place, start_day, work_period, category, salary, recruitment_status, created_at) VALUES
+INSERT INTO DB2025_Recruitment (id, user_id, work_place, start_day, work_period, category, salary, recruitment_status, created_at) VALUES
 (1, '2276123', '이화여대 학관', '2025-06-01 09:00:00', '1시간', '프린트 대리', 5000, '모집중', NOW()),
 (2, '2103123', '서울 마포구', '2025-06-15 10:00:00', '3일', '카페 알바 대타', 100000, '모집마감', NOW()),
 (3, '1955034', '이화여대 이하우스', '2025-07-01 09:30:00', '1일', '교내 근로 대타', 50000, '근무완료', NOW()),
 (4, '2003076', '이화여대 한우리집', '2025-06-20 08:00:00', '1시간', '택배 대리 수령', 10000, '모집중', NOW()),
 (5, '2271055', '서울 종로구', '2025-07-10 09:00:00', '2일', '학원 알바 대타', 80000, '모집중', NOW());
     
-SELECT * FROM Recruitment;
-#Drop Table Recruitment;
+SELECT * FROM DB2025_Recruitment;
+#Drop Table DB2025_Recruitment;
