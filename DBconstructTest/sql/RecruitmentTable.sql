@@ -17,15 +17,15 @@ CREATE TABLE DB2025_Recruit(
     # rating을 자주 보여줘야 하는 경우 여기서 view 사용 가능
     # 그게 아니더라도 해당하는 유저의 rating을 가져오려면 ㅠㅠ select from where 절이
     # 필요하기 때문에 그냥 없애고 조인이나 뷰로 가져오는 게 맞겠다는 판단입니다
-    recruitment_status VARCHAR(10) DEFAULT '모집중'
-    	CHECK (recruitment_status IN ('모집중', '모집마감', '근무완료')),
+    recruit_status VARCHAR(10) DEFAULT '모집중'
+    	CHECK (recruit_status IN ('모집중', '모집마감', '근무완료')),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (user_id) REFERENCES DB2025_Users(user_id) ON DELETE CASCADE
 );
 
 Describe DB2025_Recruit;
 
-INSERT INTO DB2025_Recruit (id, user_id, work_place, start_day, work_period, category, salary, recruitment_status, created_at) VALUES
+INSERT INTO DB2025_Recruit (id, user_id, work_place, start_day, work_period, salary, recruit_status, created_at) VALUES
 (1, '2276123', '이화여대 학관', '2025-06-01 09:00:00', '1시간', '프린트 대리', 5000, '모집중', NOW()),
 (2, '2103123', '서울 마포구', '2025-06-15 10:00:00', '3일', '카페 알바 대타', 100000, '모집마감', NOW()),
 (3, '1955034', '이화여대 이하우스', '2025-07-01 09:30:00', '1일', '교내 근로 대타', 50000, '근무완료', NOW()),
