@@ -28,7 +28,7 @@
         Class.forName("com.mysql.cj.jdbc.Driver");
         conn = DriverManager.getConnection(jdbcUrl, dbUser, dbPass);
 
-        pstmt = conn.prepareStatement("SELECT * FROM DB2025_Users WHERE id = ?");
+        pstmt = conn.prepareStatement("SELECT * FROM DB2025Team07_Users WHERE id = ?");
         pstmt.setString(1, userId);
         rs = pstmt.executeQuery();
 

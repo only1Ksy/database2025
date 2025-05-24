@@ -1,4 +1,4 @@
-package joinMember;
+package DB2025Team07_joinMember;
 
 import java.io.*;
 import java.sql.*;
@@ -7,7 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 
 @WebServlet("/JoinMemberServlet")
-public class JoinMemberServlet extends HttpServlet {
+public class DB2025Team07_JoinMemberServlet extends HttpServlet {
     static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
     static final String DB_URL = "jdbc:mysql://localhost:3306/EJobDam?serverTimezone=UTC";
     static final String USER = "root";
@@ -31,7 +31,7 @@ public class JoinMemberServlet extends HttpServlet {
             try (
                 Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
                 PreparedStatement pstmt = conn.prepareStatement(
-                    "INSERT INTO DB2025_Users (id, pwd, nickname, email, phone) VALUES (?, ?, ?, ?, ?)")
+                    "INSERT INTO DB2025Team07_Users (id, pwd, nickname, email, phone) VALUES (?, ?, ?, ?, ?)")
             ) {
                 pstmt.setString(1, id);
                 pstmt.setString(2, pwd);

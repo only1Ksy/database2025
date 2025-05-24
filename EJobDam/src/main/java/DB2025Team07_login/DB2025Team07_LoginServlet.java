@@ -1,4 +1,4 @@
-package login;
+package DB2025Team07_login;
 
 import java.io.*;
 import java.sql.*;
@@ -6,9 +6,8 @@ import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 
-@WebServlet("/LoginServlet")
-public class LoginServlet extends HttpServlet {
-    static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
+public class DB2025Team07_LoginServlet extends HttpServlet {
+	static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
     static final String DB_URL = "jdbc:mysql://localhost:3306/EJobDam?serverTimezone=UTC";
     static final String USER = "root";
     static final String PASS = "root";
@@ -59,4 +58,5 @@ public class LoginServlet extends HttpServlet {
             response.getWriter().println("데이터베이스 오류: " + e.getMessage());
         }
     }
+
 }
