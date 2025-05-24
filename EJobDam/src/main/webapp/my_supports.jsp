@@ -17,31 +17,31 @@
         Class.forName("com.mysql.cj.jdbc.Driver");
         conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/EJobDam?serverTimezone=UTC", "root", "root");
 
-        String sql = "SELECT * FROM MyRecruits WHERE user_id = ?";
+        String sql = "SELECT * FROM MySupportApplications WHERE user_id = ?";
         pstmt = conn.prepareStatement(sql);
         pstmt.setString(1, userId);
         rs = pstmt.executeQuery();
 %>
 
 <html>
-<head><title>내 모집글 보기</title></head>
+<head><title>내 지원글 보기</title></head>
 <body>
-<h2>내가 작성한 모집글</h2>
+<h2>내가 작성한 지원글</h2>
 <table border="1">
     <tr>
-        <th>모집ID</th><th>장소</th><th>시작일</th><th>근무기간</th><th>시급</th><th>상태</th><th>작성일</th>
+        <th>모집ID</th><th>장소</th><th>시작일</th><th>시급</th><th>상태</th><th>내용</th><th>지원일</th>
     </tr>
 <%
         while (rs.next()) {
 %>
     <tr>
-        <td><%= rs.getInt("id") %></td>
+        <td><%= rs.getInt("RECRUIT_ID") %></td>
         <td><%= rs.getString("work_place") %></td>
         <td><%= rs.getTimestamp("start_day") %></td>
-        <td><%= rs.getString("work_period") %></td>
         <td><%= rs.getInt("salary") %></td>
-        <td><%= rs.getString("recruitment_status") %></td>
-        <td><%= rs.getTimestamp("created_at") %></td>
+        <td><%= rs.getString("RECRUITMENT_STATE") %></td>
+        <td><%= rs.getString("SUPPORT_TEXT") %></td>
+        <td><%= rs.getTimestamp("SUPPORT_CREATED_AT") %></td>
     </tr>
 <%
         }
