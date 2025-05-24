@@ -19,21 +19,21 @@ public class JoinMemberServlet extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         response.setContentType("text/html;charset=UTF-8");
 
-        String userId = request.getParameter("user_id");
+        // HTML form에서 받은 값
+        String id = request.getParameter("user_id");  // DB에서는 id로 사용됨
         String pwd = request.getParameter("pwd");
         String nickname = request.getParameter("nickname");
         String email = request.getParameter("email");
         String phone = request.getParameter("phone");
-        
+
         try {
             Class.forName(JDBC_DRIVER);
-            
             try (
                 Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
                 PreparedStatement pstmt = conn.prepareStatement(
-                    "INSERT INTO Users (user_id, pwd, nickname, email, phone) VALUES (?, ?, ?, ?, ?)")
+                    "INSERT INTO DB2025_Users (id, pwd, nickname, email, phone) VALUES (?, ?, ?, ?, ?)")
             ) {
-                pstmt.setString(1, userId);
+                pstmt.setString(1, id);
                 pstmt.setString(2, pwd);
                 pstmt.setString(3, nickname);
                 pstmt.setString(4, email);
@@ -43,7 +43,10 @@ public class JoinMemberServlet extends HttpServlet {
                 PrintWriter out = response.getWriter();
 
                 if (result > 0) {
-                    out.println("<h3>🎉 회원가입 성공!</h3>");
+                	HttpSession session = request.getSession();
+                    session.setAttribute("user_id", id);
+                    session.setAttribute("nickname", nickname);
+                    response.sendRedirect("joinsuccess.jsp"); // <- 개인페이지 대신 success.jsp로 이동
                 } else {
                     out.println("<h3>회원가입 실패...</h3>");
                 }
@@ -54,8 +57,5 @@ public class JoinMemberServlet extends HttpServlet {
             e.printStackTrace();
             response.getWriter().println("DB 오류: " + e.getMessage());
         }
-
-
-        
     }
 }
