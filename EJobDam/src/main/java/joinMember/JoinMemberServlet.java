@@ -9,7 +9,7 @@ import javax.servlet.http.*;
 @WebServlet("/JoinMemberServlet")
 public class JoinMemberServlet extends HttpServlet {
     static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
-    static final String DB_URL = "jdbc:mysql://localhost:3306/EJobDam?serverTimezone=UTC";
+    static final String DB_URL = "jdbc:mysql://localhost:3306/DB2025Team07?serverTimezone=UTC";
     static final String USER = "root";
     static final String PASS = "root";
 

@@ -12,7 +12,7 @@
     }
 
     // DB 연결 정보
-    String jdbcUrl = "jdbc:mysql://localhost:3306/EJobDam?serverTimezone=UTC";
+    String jdbcUrl = "jdbc:mysql://localhost:3306/DB2025Team07?serverTimezone=UTC";
     String dbUser = "root";
     String dbPass = "root";
 
@@ -51,6 +51,12 @@
   <title><%= nickname %>님의 마이페이지</title>
 </head>
 <body>
+<!-- ✅ 네비게이션 -->
+  <nav>
+    <a href="main.jsp">Main</a> |
+    <a href="mypage.jsp">마이페이지</a> |
+    <a href="login.html">로그인</a> / <a href="signup.html">회원가입</a>
+  </nav>
   <h2><%= nickname %>님의 마이페이지</h2>
   <ul>
     <li><strong>학번:</strong> <%= userId %></li>

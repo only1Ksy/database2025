@@ -15,9 +15,9 @@
 
     try {
         Class.forName("com.mysql.cj.jdbc.Driver");
-        conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/EJobDam?serverTimezone=UTC", "root", "root");
+        conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DB2025Team07?serverTimezone=UTC", "root", "root");
 
-        String sql = "SELECT * FROM MySupportApplications WHERE user_id = ?";
+        String sql = "SELECT * FROM DB2025_MySupportApplications WHERE user_id = ?";
         pstmt = conn.prepareStatement(sql);
         pstmt.setString(1, userId);
         rs = pstmt.executeQuery();
