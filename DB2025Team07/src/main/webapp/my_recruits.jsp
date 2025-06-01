@@ -5,7 +5,7 @@
 <%
     String userId = (String) session.getAttribute("user_id");
     if (userId == null) {
-        response.sendRedirect("signup.html");
+        response.sendRedirect("signup.jsp");
         return;
     }
 
@@ -43,6 +43,14 @@
         <td><%= rs.getInt("salary") %></td>
         <td><%= rs.getString("recruitment_status") %></td>
         <td><%= rs.getTimestamp("created_at") %></td>
+        <td><a href="SupportsServlet?recruit_id=<%= rs.getInt("id") %>">지원글 보기</a></td>
+        <%
+        if ("모집마감".equals(rs.getString("recruitment_status"))) {
+        	%>
+        	<td><a href="evaluation.jsp?recruit_id=<%= rs.getInt("id") %>">평가하기</a></td>
+        	<%
+        }
+        %>
     </tr>
 <%
         }
