@@ -78,7 +78,8 @@ EJobDam/
 String jdbcUrl = "jdbc:mysql://localhost:3306/DB2025Team07?serverTimezone=UTC";
 String dbUser = "본인의 MySQL 사용자 이름";
 String dbPass = "본인의 MySQL 비밀번호";
-“ ⚠ dbUser와 dbPass는 본인의 환경에 맞게 꼭 변경해야 합니다!
+```
+> ⚠ dbUser와 dbPass는 본인의 환경에 맞게 꼭 변경해야 합니다!
 ---
 ✅ 6. 서버 실행 및 접속
 1. Eclipse 하단 Servers 탭 → Tomcat v9.0 Server at localhost 우클릭
