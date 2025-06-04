@@ -6,6 +6,15 @@ import javax.servlet.http.*;
 import java.io.IOException;
 import java.sql.*;
 
+/**
+ * 모집글 작성 서블릿.
+ * 
+ * - GET 요청 시: 모집글 작성 폼(post_recruits.jsp) 페이지를 보여줍니다.
+ * - POST 요청 시: 입력된 모집글 정보를 DB에 저장하고, 저장에 성공하면 메인 페이지로 리디렉션합니다.
+ * 
+ * 세션에 로그인 정보(user_id)가 없으면 login.html로 리디렉션됩니다.
+ */
+
 @WebServlet("/postRecruit")
 public class PostRecruitServlet extends HttpServlet {
     @Override
@@ -49,7 +58,7 @@ public class PostRecruitServlet extends HttpServlet {
                     int result = pstmt.executeUpdate();
 
                     if (result > 0) {
-                        response.sendRedirect("main.jsp");
+                        response.sendRedirect("main");
                     } else {
                         response.sendRedirect("error.jsp");
                     }

@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=UTF-8" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -7,12 +7,13 @@
 </head>
 <body>
   <nav>
-    <a href="main.jsp">Main</a> |
+    <a href="main">Main</a> |
     <a href="mypage.jsp">마이페이지</a> |
     <a href="login.html">로그인</a> / <a href="signup.html">회원가입</a>
   </nav>
 
   <h2>📝 모집글 작성</h2>
+
   <form method="post" action="postRecruit">
     <label>근무 장소:
       <input type="text" name="work_place" required>

@@ -2,24 +2,29 @@
 <%@ page import="java.util.*" %>
 <%
     List<Map<String, Object>> recruitList = (List<Map<String, Object>>) request.getAttribute("recruitList");
+    String error = (String) request.getAttribute("error");
 %>
 
 <!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>모집글 목록</title>
+  <title>메인 페이지</title>
 </head>
 <body>
   <nav>
-    <a href="main.jsp">Main</a> |
+    <a href="main">Main</a> |
     <a href="mypage.jsp">마이페이지</a> |
     <a href="login.html">로그인</a> / <a href="signup.html">회원가입</a>
   </nav>
 
   <h2>모집글 모아보기</h2>
 
-  <form action="post_recruits.jsp" method="get">
+  <% if (error != null) { %>
+    <p style="color:red;">오류 발생: <%= error %></p>
+  <% } %>
+
+  <form action="postRecruit" method="get">
     <input type="submit" value="모집글 작성하기">
   </form>
 
@@ -53,6 +58,10 @@
     </tr>
     <%
           }
+      } else {
+    %>
+      <tr><td colspan="7">불러온 모집글이 없습니다.</td></tr>
+    <%
       }
     %>
   </table>

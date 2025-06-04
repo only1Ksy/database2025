@@ -53,7 +53,7 @@
 <body>
 <!-- ✅ 네비게이션 -->
   <nav>
-    <a href="main.jsp">Main</a> |
+    <a href="main">Main</a> |
     <a href="mypage.jsp">마이페이지</a> |
     <a href="login.html">로그인</a> / <a href="signup.html">회원가입</a>
   </nav>
