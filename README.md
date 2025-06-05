@@ -26,29 +26,31 @@
 ```
 EJobDam/
 ├── src/
-│ └── main/
-│     └── java/
-│         ├── joinMember/
-│         │ └── JoinMember.java
-│         ├── login/
-│         │ └── Login.java
-│         ├── PostRecruitmentServlet/
-│         │ └── PostRecruitmentServlet.java
-│         └── RecruitListServlet/
-│           └── RecruitListServlet.java
-│     └── WebContent/ 또는 webapp/
-│         ├── signup.html
-│         ├── login.html
-│         ├── joinsuccess.jsp
-│         ├── main.jsp
-│         ├── mypage.jsp
-│         ├── post_recruits.jsp
-│         ├── my_recruits.jsp
-│         ├── my_supports.jsp
-│         ├── META-INF/
-│         └── WEB-INF/
-│             ├── lib/
-│             │ └── mysql-connector-java-8.0.19.jar
+│   └── main/
+│       ├── java/
+│       │   └── DB2025Team07/
+│       │       ├── DB2025Team07_AcceptSupportServlet.java
+│       │       ├── DB2025Team07_EvaluationSubmitServlet.java
+│       │       ├── DB2025Team07_JoinMemberServlet.java
+│       │       ├── DB2025Team07_LoginServlet.java
+│       │       ├── DB2025Team07_LogoutServlet.java
+│       │       └── DB2025Team07_SupportsServlet.java
+│       └── webapp/
+│           ├── evaluation.jsp
+│           ├── joinsuccess.jsp
+│           ├── login.jsp
+│           ├── main.jsp
+│           ├── my_recruits.jsp
+│           ├── my_supports.jsp
+│           ├── mypage.jsp
+│           ├── navbar.jsp
+│           ├── signup.jsp
+│           ├── supports.jsp
+│           ├── META-INF/
+│           └── WEB-INF/
+│               └── lib/
+│                   └── mysql-connector-java-8.0.19.jar
+
 ```
 ---
 ## ✅ 3. Tomcat 서버 설정
