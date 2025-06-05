@@ -49,14 +49,26 @@
       <td><%= post.get("date") %></td>
       <td><%= post.get("period") %></td>
       <td><%= post.get("salary") %>원</td>
-      <td><%= post.get("status") %></td>
       <td><%= post.get("description") %></td>
+      <td><%= post.get("status") %></td>
       <td>
-        <form action="apply.jsp" method="get">
-          <input type="hidden" name="recruit_id" value="<%= post.get("id") %>">
-          <input type="submit" value="지원하기">
-        </form>
-      </td>
+  		<%
+    		String status = (String) post.get("status");
+    		if ("모집중".equals(status)) {
+		  %>
+	    <form action="apply.jsp" method="get">
+	      <input type="hidden" name="recruit_id" value="<%= post.get("id") %>">
+	      <input type="submit" value="지원하기">
+	    </form>
+	  <%
+	    } else {
+	  %>
+	    <span style="color: gray;">지원 마감</span>
+	  <%
+	    }
+	  %>
+</td>
+
     </tr>
     <%
           }
