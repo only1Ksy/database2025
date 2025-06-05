@@ -35,6 +35,7 @@
       <th>시작 일시</th>
       <th>근무 기간</th>
       <th>시급/급여</th>
+      <th>근무 내용</th>
       <th>상태</th>
       <th>지원하기</th>
     </tr>
@@ -49,6 +50,7 @@
       <td><%= post.get("period") %></td>
       <td><%= post.get("salary") %>원</td>
       <td><%= post.get("status") %></td>
+      <td><%= post.get("description") %></td>
       <td>
         <form action="apply.jsp" method="get">
           <input type="hidden" name="recruit_id" value="<%= post.get("id") %>">

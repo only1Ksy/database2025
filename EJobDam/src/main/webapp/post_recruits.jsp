@@ -34,6 +34,10 @@
     <label>급여:
       <input type="number" name="salary" required> 원
     </label><br><br>
+    
+    <label>근무 내용:
+      <input type="text" name="description" required>
+    </label><br><br>
 
     <input type="submit" value="등록하기">
   </form>

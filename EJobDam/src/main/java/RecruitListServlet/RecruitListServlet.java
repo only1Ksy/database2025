@@ -33,7 +33,7 @@ public class RecruitListServlet extends HttpServlet {
             Class.forName("com.mysql.cj.jdbc.Driver"); // 드라이버 로딩!
             try (Connection conn = DriverManager.getConnection(jdbcUrl, dbUser, dbPass);
                  PreparedStatement pstmt = conn.prepareStatement(
-                     "SELECT R.id, R.work_place, R.start_day, R.work_period, R.salary, R.recruitment_status, U.nickname " +
+                     "SELECT R.id, R.work_place, R.start_day, R.work_period, R.salary, R.recruitment_status, U.nickname, R.recruitment_text " +
                      "FROM DB2025_Recruitment R JOIN DB2025_Users U ON R.user_id = U.id ORDER BY R.created_at DESC");
                  ResultSet rs = pstmt.executeQuery()) {
 
@@ -46,6 +46,7 @@ public class RecruitListServlet extends HttpServlet {
                     map.put("salary", rs.getInt("salary"));
                     map.put("status", rs.getString("recruitment_status"));
                     map.put("nickname", rs.getString("nickname"));
+                    map.put("description", rs.getString("recruitment_text"));
                     recruitList.add(map);
                 }
             }

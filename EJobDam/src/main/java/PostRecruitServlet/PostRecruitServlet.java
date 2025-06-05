@@ -35,6 +35,7 @@ public class PostRecruitServlet extends HttpServlet {
         String startTime = request.getParameter("start_time"); // HH:mm
         String workPeriod = request.getParameter("work_period");
         String salaryStr = request.getParameter("salary");
+        String description = request.getParameter("description");
 
         try {
             int salary = Integer.parseInt(salaryStr);
@@ -45,8 +46,8 @@ public class PostRecruitServlet extends HttpServlet {
                     "jdbc:mysql://localhost:3306/DB2025Team07?serverTimezone=UTC", "root", "root")) {
 
                 String sql = "INSERT INTO DB2025_Recruitment " +
-                             "(user_id, work_place, start_day, work_period, salary) " +
-                             "VALUES (?, ?, ?, ?, ?)";
+                             "(user_id, work_place, start_day, work_period, salary, recruitment_text) " +
+                             "VALUES (?, ?, ?, ?, ?, ?)";
 
                 try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
                     pstmt.setString(1, userId);
@@ -54,6 +55,7 @@ public class PostRecruitServlet extends HttpServlet {
                     pstmt.setString(3, startDateTime);
                     pstmt.setString(4, workPeriod);
                     pstmt.setInt(5, salary);
+                    pstmt.setString(6, description);
 
                     int result = pstmt.executeUpdate();
 
