@@ -1,6 +1,12 @@
 # 이화Job담
 이화잡담은 이화여자대학교 교내 학생들 간 아르바이트 및 근로 대타를 쉽고 빠르게 구할 수 있도록 보조하는 서비스입니다.
 
+
+## 작동 영상 & 보고서 (이미지 클릭 시 이동)
+[![Watch the video](https://github.com/user-attachments/assets/b63c5583-9404-486f-bfdd-76577cd92200)](https://www.notion.so/209fa44b72b6809b8f6dd84be3a876fc?source=copy_link)
+
+
+
 ## 🌐 EJobDam JSP/Servlet 프로젝트 환경 세팅 가이드
 이 프로젝트는 JSP/Servlet 기반의 웹 어플리케이션으로, **Eclipse, Tomcat, MySQL** 환경에서 작동합니다.
 ---
